@@ -1,0 +1,11 @@
+.icon-del,
+.icon-edit {
+  font-size: 3rem;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0 3px;
+}

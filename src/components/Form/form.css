@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.screen-reader-text {
+  position: absolute;
+  clip-path: polygon(0 0, 0 0.1%, 0.1% 0.1%, 0.1% 0);
+}
