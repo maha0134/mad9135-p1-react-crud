@@ -1,7 +1,9 @@
+import { useList } from "../../context/listContext";
 import "./form.css";
 export default function Form({ id }) {
+  const [, , , saveItem] = useList();
   return (
-    <form>
+    <form onSubmit={saveItem}>
       <input type="text" name="name" placeholder="Enter product name" />
       <label htmlFor="name" className=".screen-reader-text ">
         Product Name
@@ -15,6 +17,7 @@ export default function Form({ id }) {
         How many
       </label>
       <button type="submit">Save Item</button>
+      <button type="reset">Cancel</button>
     </form>
   );
 }
