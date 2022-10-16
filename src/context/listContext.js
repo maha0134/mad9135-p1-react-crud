@@ -1,39 +1,73 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 const ListContext = createContext();
 
 function ListProvider(props) {
   const [list, setList] = useState([]);
   const key = "shop";
-  const [viewOpen, setViewOpen] = useState(false);
+  const [newViewOpen, setNewViewOpen] = useState(false);
+  const [editItemIndex, setEditItemIndex] = useState(null);
+
+  //retrieve list, if it exists, from local storage
   useEffect(() => {
     const fetch = JSON.parse(localStorage.getItem(key));
     if (fetch) setList(fetch);
   }, []);
 
-  function addNewItem() {
-    setViewOpen(true);
+  function toggleView() {
+    setNewViewOpen(!newViewOpen);
   }
 
-  function saveItem(ev) {
+  function saveButtonClicked(ev) {
     ev.preventDefault();
     const form = ev.target;
     const listItem = {
       name: form.name.value,
       storeName: form.storeName.value,
-      quantity: form.quantity.value,
+      quantity: form.quantity.value ? form.quantity.value : 0,
     };
-
-    list.push(listItem);
+    if (editItemIndex === null) {
+      //saving a new form
+      listItem.id = list.length;
+      list.push(listItem);
+      toggleView();
+    } else {
+      //saving an edit form
+      const index = Number(editItemIndex);
+      listItem.id = index;
+      list[index] = listItem;
+      setEditItemIndex(null);
+    }
     setList(list);
     localStorage.setItem(key, JSON.stringify(list));
-    setViewOpen(false);
   }
 
-  function editItem() {}
+  function editButton(ev) {
+    const li = ev.currentTarget;
+    setEditItemIndex(li.dataset.id);
+  }
 
+  function deleteButton(ev) {}
+
+  function itemClicked(ev) {
+    if (ev.target.closest(".icon-edit")) editButton(ev);
+    if (ev.target.closest(".icon-del")) deleteButton(ev);
+  }
+  function cancelButtonClicked() {
+    // if (editItemIndex !== null) {
+    setEditItemIndex(null);
+  }
   return (
     <ListContext.Provider
-      value={[list, viewOpen, addNewItem, saveItem, editItem]}
+      value={[
+        list,
+        newViewOpen,
+        toggleView,
+        saveButtonClicked,
+        editItemIndex,
+        itemClicked,
+        cancelButtonClicked,
+      ]}
       {...props}
     />
   );

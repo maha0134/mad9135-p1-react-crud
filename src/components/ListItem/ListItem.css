@@ -5,7 +5,8 @@
 li {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.25rem;
+  justify-content: space-between;
   padding: 1rem;
   box-shadow: 0 0 3px;
 }
