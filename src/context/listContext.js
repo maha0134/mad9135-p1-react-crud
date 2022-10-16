@@ -1,5 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const ListContext = createContext();
 
 function ListProvider(props) {
@@ -19,7 +19,6 @@ function ListProvider(props) {
   }
 
   function saveButtonClicked(ev) {
-    ev.preventDefault();
     const form = ev.target;
     const listItem = {
       name: form.name.value,
@@ -30,7 +29,6 @@ function ListProvider(props) {
       //saving a new form
       listItem.id = list.length;
       list.push(listItem);
-      toggleView();
     } else {
       //saving an edit form
       const index = Number(editItemIndex);
@@ -54,9 +52,9 @@ function ListProvider(props) {
     if (ev.target.closest(".icon-del")) deleteButton(ev);
   }
   function cancelButtonClicked() {
-    // if (editItemIndex !== null) {
     setEditItemIndex(null);
   }
+
   return (
     <ListContext.Provider
       value={[

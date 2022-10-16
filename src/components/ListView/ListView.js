@@ -1,11 +1,9 @@
 import "./listView.css";
 import ListItem from "../ListItem/ListItem";
 import { useList } from "../../context/listContext";
-import NewItemView from "../NewItemView/NewItemView";
-import { Navigate } from "react-router-dom";
 
 export default function ListView() {
-  const [list, newViewOpen, toggleView] = useList();
+  const [list] = useList();
 
   return (
     <>

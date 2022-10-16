@@ -11,8 +11,14 @@ export default function Form({ item }) {
     itemClicked,
     cancelButtonClicked,
   ] = useList();
+  const navigate = useNavigate();
+  function formSubmitted(ev) {
+    ev.preventDefault();
+    saveButtonClicked(ev);
+    navigate("/home");
+  }
   return (
-    <form onSubmit={saveButtonClicked}>
+    <form onSubmit={formSubmitted}>
       <input
         type="text"
         name="name"
