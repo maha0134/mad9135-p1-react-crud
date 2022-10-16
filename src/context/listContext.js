@@ -1,11 +1,9 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 const ListContext = createContext();
 
 function ListProvider(props) {
   const [list, setList] = useState([]);
   const key = "shop";
-  const [newViewOpen, setNewViewOpen] = useState(false);
   const [editItemIndex, setEditItemIndex] = useState(null);
 
   //retrieve list, if it exists, from local storage
@@ -13,10 +11,6 @@ function ListProvider(props) {
     const fetch = JSON.parse(localStorage.getItem(key));
     if (fetch) setList(fetch);
   }, []);
-
-  function toggleView() {
-    setNewViewOpen(!newViewOpen);
-  }
 
   function saveButtonClicked(ev) {
     const form = ev.target;
@@ -40,16 +34,19 @@ function ListProvider(props) {
     localStorage.setItem(key, JSON.stringify(list));
   }
 
-  function editButton(ev) {
-    const li = ev.currentTarget;
-    setEditItemIndex(li.dataset.id);
+  function deleteButtonClicked(index) {
+    const newList = [...list];
+    newList.splice(index, 1);
+    newList.forEach((item, index) => {
+      item.id = index;
+    });
+    localStorage.setItem(key, JSON.stringify(newList));
+    setList(newList);
   }
 
-  function deleteButton(ev) {}
-
-  function itemClicked(ev) {
-    if (ev.target.closest(".icon-edit")) editButton(ev);
-    if (ev.target.closest(".icon-del")) deleteButton(ev);
+  function editButtonClicked(ev) {
+    const li = ev.currentTarget.closest("li");
+    setEditItemIndex(Number(li.dataset.id));
   }
   function cancelButtonClicked() {
     setEditItemIndex(null);
@@ -59,12 +56,11 @@ function ListProvider(props) {
     <ListContext.Provider
       value={[
         list,
-        newViewOpen,
-        toggleView,
         saveButtonClicked,
         editItemIndex,
-        itemClicked,
+        editButtonClicked,
         cancelButtonClicked,
+        deleteButtonClicked,
       ]}
       {...props}
     />

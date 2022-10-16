@@ -10,8 +10,12 @@ export default function ListView() {
       {list.length === 0 && <p>Please add some items</p>}
       {list.length > 0 && (
         <ul className="unstyled-list">
-          {list.map((item) => (
-            <ListItem key={item.id} item={item} />
+          {list.map((item, index) => (
+            <ListItem
+              key={item.name + parseInt(item.id)}
+              item={item}
+              index={index}
+            />
           ))}
         </ul>
       )}

@@ -4,8 +4,6 @@ import "./form.css";
 export default function Form({ item }) {
   const [
     list,
-    newViewOpen,
-    toggleView,
     saveButtonClicked,
     editItemIndex,
     itemClicked,
