@@ -27,13 +27,23 @@ export default function Form({ item }) {
       <label htmlFor="name" className="screen-reader-text ">
         Product Name
       </label>
-      <input
+      {/* <input
         type="text"
         name="storeName"
         placeholder="Enter store name"
         defaultValue={item && "id" in item ? item.storeName : ""}
         required
-      />
+      /> */}
+
+      <select name="storeName" required>
+        <option value="">Select a Store</option>
+        <option value="Dollarama">Dollarama</option>
+        <option value="Loblaw">Loblaw</option>
+        <option value="Walmart">Walmart</option>
+        <option value="SuperStore">SuperStore</option>
+        <option value="Toys R US">Toys R US</option>
+        <option value="Other">Other</option>
+      </select>
       <label htmlFor="name" className="screen-reader-text">
         Store Name
       </label>
@@ -47,7 +57,7 @@ export default function Form({ item }) {
         How many
       </label>
       <div className="form-buttons">
-        <button type="submit" className="form-btn">
+        <button type="submit" className="btn form-btn">
           Save Item
         </button>
         {item && "id" in item ? (

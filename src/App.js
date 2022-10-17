@@ -10,9 +10,6 @@ function App() {
     <ListProvider>
       <div className="App">
         <AppHeader />
-        <Link to="/addItem" className="btn">
-          Add
-        </Link>
         <Routes>
           <Route path="/home" element={<ListView />} />
           <Route path="/addItem" element={<NewItemView />} />

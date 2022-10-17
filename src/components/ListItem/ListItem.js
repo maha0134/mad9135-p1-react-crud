@@ -1,5 +1,7 @@
 import "./listItem.css";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { GrEdit } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 import { useList } from "../../context/listContext";
 import { useState } from "react";
 import NewItemView from "../NewItemView/NewItemView";
@@ -42,15 +44,19 @@ export default function ListItem({ item, index }) {
           </div>
         </Modal>
         <li data-id={index}>
-          <h3>{item.name}</h3>
-          <h4>{item.storeName}</h4>
+          <div className="details">
+            <h3>{item.name}</h3>
+            <h4>{item.storeName}</h4>
+          </div>
           <p>{item.quantity}</p>
-          <button onClick={editButtonClicked}>
-            <AiFillEdit className="icon-edit" />
-          </button>
-          <button onClick={openModal}>
-            <AiFillDelete className="icon-del" />
-          </button>
+          <div className="li-buttons">
+            <button onClick={editButtonClicked} className="icon-edit">
+              <GrEdit />
+            </button>
+            <button onClick={openModal} className="icon-del">
+              <MdDelete />
+            </button>
+          </div>
         </li>
       </>
     );
