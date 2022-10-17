@@ -3,6 +3,11 @@ export default function NewItemView({ item }) {
   if (item) {
     return <Form item={item} />;
   } else {
-    return <Form />;
+    return (
+      <>
+        <h2>Please enter the following details:</h2>
+        <Form />
+      </>
+    );
   }
 }

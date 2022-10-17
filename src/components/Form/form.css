@@ -2,8 +2,35 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.25rem;
+}
+form input {
+  font-size: 1.2rem;
+  padding: 0.75em;
+  margin: 1rem;
+  border-radius: 3rem;
+}
+.form-btn {
+  font-size: 1.25rem;
+  padding: 0.75em 0.75em;
+  border-radius: 2rem;
+  display: inline-block;
+  align-self: center;
+  border: none;
+  background-color: aquamarine;
+  box-shadow: inset 0 0 5px;
 }
 .screen-reader-text {
   position: absolute;
   clip-path: polygon(0 0, 0 0.1%, 0.1% 0.1%, 0.1% 0);
+}
+.form-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-buttons a {
+  color: black;
+  /* text-decoration: none; */
 }

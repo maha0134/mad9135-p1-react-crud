@@ -24,7 +24,7 @@ export default function Form({ item }) {
         defaultValue={item && "id" in item ? item.name : ""}
         required
       />
-      <label htmlFor="name" className=".screen-reader-text ">
+      <label htmlFor="name" className="screen-reader-text ">
         Product Name
       </label>
       <input
@@ -34,7 +34,7 @@ export default function Form({ item }) {
         defaultValue={item && "id" in item ? item.storeName : ""}
         required
       />
-      <label htmlFor="name" className=".screen-reader-text">
+      <label htmlFor="name" className="screen-reader-text">
         Store Name
       </label>
       <input
@@ -43,17 +43,21 @@ export default function Form({ item }) {
         placeholder="Enter quantity"
         defaultValue={item && "id" in item ? item.quantity : ""}
       />
-      <label htmlFor="name" className=".screen-reader-text">
+      <label htmlFor="name" className="screen-reader-text">
         How many
       </label>
-      <button type="submit">Save Item</button>
-      {item && "id" in item ? (
-        <button type="reset" onClick={cancelButtonClicked}>
-          Cancel
+      <div className="form-buttons">
+        <button type="submit" className="form-btn">
+          Save Item
         </button>
-      ) : (
-        <Link to="/home">Cancel</Link>
-      )}
+        {item && "id" in item ? (
+          <button type="reset" onClick={cancelButtonClicked}>
+            Cancel
+          </button>
+        ) : (
+          <Link to="/home">Cancel</Link>
+        )}
+      </div>
     </form>
   );
 }
