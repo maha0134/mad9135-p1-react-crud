@@ -9,6 +9,14 @@ export default function Form({ item }) {
     itemClicked,
     cancelButtonClicked,
   ] = useList();
+  const stores = [
+    "Dollarama",
+    "Loblaw",
+    "Walmart",
+    "SuperStore",
+    "Toys R Us",
+    "Other",
+  ];
   const navigate = useNavigate();
   function formSubmitted(ev) {
     ev.preventDefault();
@@ -37,12 +45,23 @@ export default function Form({ item }) {
 
       <select name="storeName" required>
         <option value="">Select a Store</option>
-        <option value="Dollarama">Dollarama</option>
+        {stores.map((store, index) => {
+            if (item&&"id" in item) {
+              if (item.selectedIndex === index)
+                return (
+                  <option defaultValue={store} selected>
+                    {store}
+                  </option>
+                );
+            } 
+              return <option defaultValue={store}>{store}</option>;
+          })}
+        {/* <option value="Dollarama">Dollarama</option>
         <option value="Loblaw">Loblaw</option>
         <option value="Walmart">Walmart</option>
         <option value="SuperStore">SuperStore</option>
         <option value="Toys R US">Toys R US</option>
-        <option value="Other">Other</option>
+        <option value="Other">Other</option> */}
       </select>
       <label htmlFor="name" className="screen-reader-text">
         Store Name

@@ -17,6 +17,7 @@ function ListProvider(props) {
     const listItem = {
       name: form.name.value,
       storeName: form.storeName.value,
+      selectedIndex: form.storeName.selectedIndex,
       quantity: form.quantity.value ? form.quantity.value : 1,
     };
     if (editItemIndex === null) {

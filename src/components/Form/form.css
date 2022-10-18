@@ -10,11 +10,10 @@ form input,
 select {
   font-size: 1.2rem;
   padding: 0.75em;
-  border-radius: 3rem;
-}
-form select {
+  border: 2px solid black;
   border-radius: 0.5rem;
 }
+
 .form-btn {
   padding: 0.75em 0.75em;
   margin: 0;
