@@ -46,16 +46,16 @@ export default function Form({ item }) {
       <select name="storeName" required>
         <option value="">Select a Store</option>
         {stores.map((store, index) => {
-            if (item&&"id" in item) {
-              if (item.selectedIndex === index)
-                return (
-                  <option defaultValue={store} selected>
-                    {store}
-                  </option>
-                );
-            } 
-              return <option defaultValue={store}>{store}</option>;
-          })}
+          if (item && "id" in item) {
+            if (item.selectedIndex - 1 === index)
+              return (
+                <option defaultValue={store} selected>
+                  {store}
+                </option>
+              );
+          }
+          return <option defaultValue={store}>{store}</option>;
+        })}
         {/* <option value="Dollarama">Dollarama</option>
         <option value="Loblaw">Loblaw</option>
         <option value="Walmart">Walmart</option>
@@ -80,7 +80,11 @@ export default function Form({ item }) {
           Save Item
         </button>
         {item && "id" in item ? (
-          <button type="reset" onClick={cancelButtonClicked}>
+          <button
+            type="reset"
+            onClick={cancelButtonClicked}
+            className="cancel-btn"
+          >
             Cancel
           </button>
         ) : (

@@ -7,7 +7,7 @@ export default function ListView() {
   const [list] = useList();
 
   return (
-    <>
+    <div className="container">
       <Link to="/addItem" className="btn">
         Add
       </Link>
@@ -23,6 +23,6 @@ export default function ListView() {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }
