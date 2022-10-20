@@ -35,14 +35,6 @@ export default function Form({ item }) {
       <label htmlFor="name" className="screen-reader-text ">
         Product Name
       </label>
-      {/* <input
-        type="text"
-        name="storeName"
-        placeholder="Enter store name"
-        defaultValue={item && "id" in item ? item.storeName : ""}
-        required
-      /> */}
-
       <select name="storeName" required>
         <option value="">Select a Store</option>
         {stores.map((store, index) => {
@@ -56,14 +48,8 @@ export default function Form({ item }) {
           }
           return <option defaultValue={store}>{store}</option>;
         })}
-        {/* <option value="Dollarama">Dollarama</option>
-        <option value="Loblaw">Loblaw</option>
-        <option value="Walmart">Walmart</option>
-        <option value="SuperStore">SuperStore</option>
-        <option value="Toys R US">Toys R US</option>
-        <option value="Other">Other</option> */}
       </select>
-      <label htmlFor="name" className="screen-reader-text">
+      <label htmlFor="storeName" className="screen-reader-text">
         Store Name
       </label>
       <input
@@ -72,7 +58,7 @@ export default function Form({ item }) {
         placeholder="Enter quantity"
         defaultValue={item && "id" in item ? item.quantity : ""}
       />
-      <label htmlFor="name" className="screen-reader-text">
+      <label htmlFor="quantity" className="screen-reader-text">
         How many
       </label>
       <div className="form-buttons">

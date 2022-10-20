@@ -61,16 +61,18 @@ export default function ListItem({ item, index }) {
         </Modal>
         <li data-id={index}>
           <div className="details">
-            <h3>{item.name}</h3>
-            <h4>{item.storeName}</h4>
+            <h2>{item.name}</h2>
+            <h3>{item.storeName}</h3>
           </div>
           <p>{item.quantity}</p>
           <div className="li-buttons">
             <button onClick={editButtonClicked} className="icon-edit">
               <GrEdit />
+              <span className="screen-reader-text ">Edit Button</span>
             </button>
             <button onClick={openModal} className="icon-del">
               <MdDelete />
+              <span className="screen-reader-text ">Delete Button</span>
             </button>
           </div>
         </li>
