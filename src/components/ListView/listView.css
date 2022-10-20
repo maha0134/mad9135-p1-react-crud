@@ -32,7 +32,6 @@
     margin-right: 2rem;
   }
   .unstyled-list {
-    margin: 0 auto;
     justify-content: space-between;
     flex-direction: row;
   }
