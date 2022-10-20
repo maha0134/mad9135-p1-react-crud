@@ -2,7 +2,7 @@ import AppHeader from "./components/AppHeader/AppHeader";
 import "./App.css";
 import ListView from "./components/ListView/ListView";
 import { ListProvider } from "./context/listContext";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import NewItemView from "./components/NewItemView/NewItemView";
 
 function App() {
