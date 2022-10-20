@@ -36,15 +36,18 @@ export default function Form({ item }) {
         Product Name
       </label>
       <select name="storeName" required>
-        <option value="">Select a Store</option>
+        <option defaultValue="">Select a Store</option>
         {stores.map((store, index) => {
           if (item && "id" in item) {
-            if (item.selectedIndex - 1 === index)
-              return (
-                <option defaultValue={store} selected>
-                  {store}
-                </option>
-              );
+            // if (item.selectedIndex - 1 === index)
+            return (
+              <option
+                defaultValue={store}
+                selected={item.selectedIndex - 1 === index}
+              >
+                {store}
+              </option>
+            );
           }
           return <option defaultValue={store}>{store}</option>;
         })}

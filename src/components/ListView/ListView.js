@@ -11,7 +11,7 @@ export default function ListView() {
       <Link to="/addItem" className="btn">
         Add
       </Link>
-      {list.length === 0 && <h3 className="no-items">Please add some items</h3>}
+      {list.length === 0 && <h2 className="no-items">Please add some items</h2>}
       {list.length > 0 && (
         <ul className="unstyled-list">
           {list.map((item, index) => (

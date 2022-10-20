@@ -39,4 +39,5 @@ select {
   font-size: 1.25rem;
   border: none;
   text-decoration: underline;
+  cursor: pointer;
 }
