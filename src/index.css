@@ -6,7 +6,8 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background-color: rgb(223, 249, 227);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -21,26 +22,45 @@ code {
 }
 
 /* Typography */
+h1 {
+  font-size: 1.802rem;
+}
+
+h2 {
+  font-size: 1.602rem;
+}
+
+h3 {
+  font-size: 1.424rem;
+}
+
+h4 {
+  font-size: 1.266rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
 
 @media only screen and (min-width: 45em) {
   h1 {
-    font-size: 3.052rem;
+    font-size: 2.488rem;
   }
 
   h2 {
-    font-size: 2.441rem;
+    font-size: 2.074rem;
   }
 
   h3 {
-    font-size: 1.953rem;
+    font-size: 1.728rem;
   }
 
   h4 {
-    font-size: 1.563rem;
+    font-size: 1.44rem;
   }
 
   h5 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   p {
     font-size: 1.75rem;
@@ -49,23 +69,19 @@ code {
 }
 @media only screen and (min-width: 60em) {
   h1 {
-    font-size: 4.209rem;
+    font-size: 3.052rem;
   }
 
   h2 {
-    font-size: 3.157rem;
-  }
-
-  h3 {
-    font-size: 2.369rem;
+    font-size: 2.2rem;
   }
 
   h4 {
-    font-size: 1.777rem;
+    font-size: 1.563rem;
   }
 
   h5 {
-    font-size: 1.333rem;
+    font-size: 1.25rem;
   }
   p {
     font-size: 2rem;

@@ -35,21 +35,20 @@ export default function Form({ item }) {
       <label htmlFor="name" className="screen-reader-text ">
         Product Name
       </label>
-      <select name="storeName" required>
-        <option defaultValue="">Select a Store</option>
+      <select
+        name="storeName"
+        required
+        defaultValue={item && "id" in item && item.storeName}
+      >
+        <option defaultValue="" disabled>
+          Select a Store
+        </option>
         {stores.map((store, index) => {
-          if (item && "id" in item) {
-            // if (item.selectedIndex - 1 === index)
-            return (
-              <option
-                defaultValue={store}
-                selected={item.selectedIndex - 1 === index}
-              >
-                {store}
-              </option>
-            );
-          }
-          return <option defaultValue={store}>{store}</option>;
+          return (
+            <option defaultValue={store} key={index}>
+              {store}
+            </option>
+          );
         })}
       </select>
       <label htmlFor="storeName" className="screen-reader-text">

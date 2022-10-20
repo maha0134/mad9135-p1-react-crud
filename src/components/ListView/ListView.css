@@ -3,11 +3,12 @@
   margin: 0;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 .no-items {
   font-size: 1.5rem;
@@ -22,6 +23,9 @@
   .unstyled-list {
     padding: 2rem;
   }
+  .unstyled-list li {
+    padding: 1.5rem;
+  }
 }
 @media only screen and (min-width: 60em) {
   a.btn {
@@ -30,5 +34,9 @@
   .unstyled-list {
     margin: 0 auto;
     justify-content: space-between;
+    flex-direction: row;
+  }
+  .unstyled-list li {
+    padding: 1.75rem;
   }
 }

@@ -1,7 +1,7 @@
 form {
   display: flex;
   flex-direction: column;
-  width: min(15rem, 80%);
+  max-width: min(15rem, 80%);
   margin: 0 auto;
   gap: 1.5rem;
   font-size: 1.25rem;
@@ -31,7 +31,6 @@ select {
 
 .form-buttons a {
   color: black;
-  /* text-decoration: none; */
 }
 
 .cancel-btn {
@@ -40,4 +39,20 @@ select {
   border: none;
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 45em) {
+  form {
+    max-width: min(20rem, 100%);
+  }
+
+  form,
+  form input,
+  form select {
+    font-size: 1.75rem;
+  }
+  form input,
+  select {
+    padding: 0.5em;
+  }
 }
