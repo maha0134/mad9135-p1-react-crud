@@ -23,7 +23,7 @@ export default function ListItem({ item, index }) {
       fontSize: "1.5rem",
       padding: "1rem",
       margin: "auto",
-      maxWidth: "35rem",
+      maxWidth: "40rem",
       textAlign: "center",
       maxHeight: "25rem",
     },

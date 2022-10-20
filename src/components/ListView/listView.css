@@ -10,9 +10,7 @@
   flex-wrap: wrap;
   max-width: 100%;
 }
-.no-items {
-  font-size: 1.5rem;
-}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -32,7 +30,8 @@
     margin-right: 2rem;
   }
   .unstyled-list {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     flex-direction: row;
   }
   .unstyled-list li {
