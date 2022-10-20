@@ -2,13 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useList } from "../../context/listContext";
 import "./form.css";
 export default function Form({ item }) {
-  const [
-    list,
-    saveButtonClicked,
-    editItemIndex,
-    itemClicked,
-    cancelButtonClicked,
-  ] = useList();
+  const [, saveButtonClicked, cancelButtonClicked] = useList();
   const stores = [
     "Dollarama",
     "Loblaw",

@@ -7,14 +7,8 @@ import NewItemView from "../NewItemView/NewItemView";
 import Modal from "react-modal";
 Modal.setAppElement("#root");
 export default function ListItem({ item, index }) {
-  const [
-    list,
-    saveButtonClicked,
-    editItemIndex,
-    editButtonClicked,
-    cancelButtonClicked,
-    deleteButtonClicked,
-  ] = useList();
+  const [, , , editItemIndex, editButtonClicked, deleteButtonClicked] =
+    useList();
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);

@@ -58,9 +58,9 @@ function ListProvider(props) {
       value={[
         list,
         saveButtonClicked,
+        cancelButtonClicked,
         editItemIndex,
         editButtonClicked,
-        cancelButtonClicked,
         deleteButtonClicked,
       ]}
       {...props}
